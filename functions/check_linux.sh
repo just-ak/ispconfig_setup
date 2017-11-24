@@ -75,6 +75,13 @@ CheckLinux() {
   if echo $ID-$VERSION_ID | grep -iq "centos-7"; then
 		DISTRO=centos7
   fi
+  
+  #---------------------------------------------------------------------
+  #    Raspbian
+  #---------------------------------------------------------------------
+  if echo $ID-$VERSION_ID | grep -iq "raspbian-9"; then
+                DISTRO=raspbian9
+  fi
 
 }
 
