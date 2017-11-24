@@ -3,6 +3,8 @@
 #    Install the chosen webmail client. Squirrelmail or Roundcube
 #---------------------------------------------------------------------
 InstallWebmail() {
+
+: <<'END'
   echo -n "Installing webmail client ($CFG_WEBMAIL)... "
   echo "dictionaries-common dictionaries-common/default-wordlist select american (American English)" | debconf-set-selections
   apt-get -yqq install squirrelmail wamerican > /dev/null 2>&1
@@ -37,6 +39,7 @@ InstallWebmail() {
   else
 	  service nginx restart > /dev/null 2>&1
   fi
+END
   echo -e "[${green}DONE${NC}]\n"
 }
 
